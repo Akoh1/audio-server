@@ -52,12 +52,10 @@ env.bak/
 venv.bak/ 
 
 # Settings
-manage.py
 codecorp/wsgi.py
 # codecorp/settings/prod.py
 # *prod.py
 *wsgi.py
-*manage.py
 
 # Distribution / packaging 
 .Python build/ 
