@@ -24,13 +24,13 @@ def test_update_song(test_client):
         'name': "test song 1", 
         'duration': 2000
         })
-    response = test_client.put('/song/11', data=datar, content_type='application/json')
+    response = test_client.put('/song/1', data=datar, content_type='application/json')
     assert response.status_code == 201
     assert b"Song updated" in response.data
     assert b"Test" not in response.data
 
 def test_delete_song(test_client):
-    response = test_client.delete('/song/12', content_type='application/json')
+    response = test_client.delete('/song/1', content_type='application/json')
     assert response.status_code == 200
     assert b"Song Deleted" in response.data
     assert b"Test" not in response.data
@@ -63,7 +63,7 @@ def test_update_podcast(test_client):
         'narrator': "john fache", 'duration': 2000,
         'host': "Audiomack"
         })
-    response = test_client.put('/podcast/4', 
+    response = test_client.put('/podcast/1', 
                               data=data, content_type='application/json')
     assert response.status_code == 201
     assert b"Podcast Updated" in response.data
@@ -71,7 +71,7 @@ def test_update_podcast(test_client):
 
 def test_delete_podcast(test_client):
 
-    response = test_client.delete('/podcast/4', content_type='application/json')
+    response = test_client.delete('/podcast/1', content_type='application/json')
     assert response.status_code == 200
     assert b"Podcast Deleted" in response.data
     assert b"Test" not in response.data
@@ -103,13 +103,13 @@ def test_update_audiobook(test_client):
         'title': "My book new", 'author': "akoh",
         'narrator': "steven durag", 'duration': 3000,
         })
-    response = test_client.put('/audiobook/4', data=data, content_type='application/json')
+    response = test_client.put('/audiobook/1', data=data, content_type='application/json')
     assert response.status_code == 201
     assert b"AudioBook Updated" in response.data
     assert b"Test" not in response.data
 
 def test_delete_audiobook(test_client):
-    response = test_client.delete('/audiobook/4', content_type='application/json')
+    response = test_client.delete('/audiobook/1', content_type='application/json')
     assert response.status_code == 200
     assert b"AudioBook Deleted" in response.data
     assert b"Test" not in response.data
